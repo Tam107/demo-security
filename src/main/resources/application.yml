@@ -14,10 +14,22 @@ spring:
       database: postgresql
       database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+# /api-docs endpoint custom path
+# Bật Swagger
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+
+
 application:
   security:
     jwt:
       secret-key: afe65bcd93be0f27d04415f68b9b6ca33f909553ad54c3966cd719a7e44606c1
-      expiration:
+      expiration: 86400000 # a day
       refresh-token:
-        expiration:
+        expiration: 604800000 # 7 days
